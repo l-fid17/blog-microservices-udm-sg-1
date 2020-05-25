@@ -19,12 +19,14 @@ app.post("/events", (req, res) => {
     const { id, title } = data;
 
     posts[id] = { id, title, comments: [] };
+    console.log("Query::PostCreated ", posts[id]);
   }
 
   if (type === "CommentCreated") {
     const { id, content, postId, status } = data;
     const post = posts[postId];
     post.comments.push({ id, content, status });
+    console.log("Query::CommentCreated ", {});
   }
 
   if (type === "CommentUpdated") {
@@ -37,6 +39,8 @@ app.post("/events", (req, res) => {
 
     comment.status = status;
     comment.content = content;
+
+    console.log("Query::CommentUpdated ", comment);
   }
 
   console.log(posts);

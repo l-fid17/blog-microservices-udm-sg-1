@@ -31,6 +31,7 @@ app.post("/posts", async (req, res) => {
     },
   });
 
+  console.log("Posts::Created ", posts[id]);
   res.status(201).send(posts[id]);
 });
 

@@ -20,6 +20,7 @@ app.post("/events", async (req, res) => {
     });
   }
 
+  console.log("Moderation::moderated ", {});
   res.send({});
 });
 
