@@ -9,6 +9,10 @@ spec:
     - host: posts.com
       http:
         paths:
+          - path: /posts/create
+            backend:
+              serviceName: posts-srv
+              servicePort: 4000
           - path: /posts
             backend:
               serviceName: posts-srv
