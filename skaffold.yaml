@@ -1,0 +1,58 @@
+apiVersion: skafold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./deployment/k8s/*
+build:
+  local:
+    push: false
+artifacts:
+  - image: lfid/client
+    context: client
+    docker:
+      dockerFile: Dockerfile
+    sync:
+      manual:
+        - src: "src/**/*.js"
+          dest: .
+  - image: lfid/comments
+    context: comments
+    docker:
+      dockerFile: Dockerfile
+    sync:
+      manual:
+        - src: "*.js"
+          dest: .
+  - image: lfid/event-bus
+    context: event-bus
+    docker:
+      dockerFile: Dockerfile
+    sync:
+      manual:
+        - src: "*.js"
+          dest: .
+  - image: lfid/moderation
+    context: moderation
+    docker:
+      dockerFile: Dockerfile
+    sync:
+      manual:
+        - src: "*.js"
+          dest: .
+  - image: lfid/posts
+    context: posts
+    docker:
+      dockerFile: Dockerfile
+    sync:
+      manual:
+        - src: "*.js"
+          dest: .
+  - image: lfid/query
+    context: query
+    docker:
+      dockerFile: Dockerfile
+    sync:
+      manual:
+        - src: "*.js"
+          dest: .
