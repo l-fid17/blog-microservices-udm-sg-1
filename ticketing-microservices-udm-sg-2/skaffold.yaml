@@ -12,7 +12,12 @@ build:
       context: auth
       docker:
         dockerfile: Dockerfile
+      # change synced files
+      # inject changes to the pod
       sync:
         manual:
+          # synced files
           - src: "src/**/*.ts"
             dest: .
+      # change unsynced files
+      # using GC Build
