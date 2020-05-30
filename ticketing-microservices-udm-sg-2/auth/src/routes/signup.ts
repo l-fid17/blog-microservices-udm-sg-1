@@ -5,6 +5,7 @@ import jwt from "jsonwebtoken";
 import { RequestValidationError } from "../errors/request-validation-error";
 import { User } from "../models/user";
 import { BadRequestError } from "../errors/bad-request-error";
+import { CustomError } from "../errors/curstom-error";
 
 const router = express.Router();
 
@@ -40,7 +41,7 @@ router.post(
         id: user.id,
         email: user.email,
       },
-      "aaa"
+      process.env.JWT_KEY!
     );
 
     req.session = {
