@@ -41,10 +41,8 @@ router.post(
       process.env.JWT_KEY!
     );
 
-    // req.session = { jwt: userJwt };
-    req.session.jwt = userJwt;
+    req.session = { jwt: userJwt };
 
-    console.log(req.session.jwt);
     res.status(201).send(existingUser);
   }
 );
