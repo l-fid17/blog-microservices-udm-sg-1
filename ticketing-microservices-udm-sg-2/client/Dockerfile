@@ -1,8 +1,9 @@
-FROM node:alpine
+FROM node:lts-alpine
 
 WORKDIR /app
 COPY package.json .
-RUN npm install
-copy . .
+RUN yarn --prod
+RUN npx next telemetry disable
+COPY . .
 
-CMD ["npm", 'run', 'dev']
+CMD ["yarn", "dev"]
