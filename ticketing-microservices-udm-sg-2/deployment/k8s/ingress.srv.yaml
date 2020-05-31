@@ -10,7 +10,11 @@ spec:
     - host: ticketing.dev
       http:
         paths:
-          - path: /api/users/?(/*)
+          - path: /api/users/?(.*)
             backend:
               serviceName: auth-srv
+              servicePort: 3000
+          - path: /?(.*) # catch all
+            backend:
+              serviceName: client-srv
               servicePort: 3000
