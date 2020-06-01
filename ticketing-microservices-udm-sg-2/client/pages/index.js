@@ -2,12 +2,7 @@ import React from "react";
 import buildClient from "../api/build-client";
 
 const index = ({ currentUser }) => {
-  console.log(currentUser);
-  return (
-    <div>
-      <h1>Index</h1>
-    </div>
-  );
+  return currentUser ? <h1>Signed in</h1> : <h1>Not signed in</h1>;
 };
 
 index.getInitialProps = async (context) => {

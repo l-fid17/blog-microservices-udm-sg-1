@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async ({ req }) => {
+export default ({ req }) => {
   if (typeof window === "undefined") {
     // we are on the server
     return axios.create({
