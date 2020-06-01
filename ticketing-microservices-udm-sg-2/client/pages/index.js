@@ -10,16 +10,14 @@ const index = ({ currentUser }) => {
   );
 };
 
-index.getInitialProps = async () => {
+index.getInitialProps = async ({ req }) => {
   //if we are on the server
   if (typeof window === "undefined") {
     // route the req to nginx
     const { data } = await axios.get(
       "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentuser",
       {
-        headers: {
-          Host: "ticketing.dev",
-        },
+        headers: req.headers,
       }
     );
 
