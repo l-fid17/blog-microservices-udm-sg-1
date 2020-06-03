@@ -1,7 +1,11 @@
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
 
-import { NotFoundError, requireAuth } from "@sg-udemy-gittix/common";
+import {
+  NotAuthorizedError,
+  NotFoundError,
+  requireAuth,
+} from "@sg-udemy-gittix/common";
 
 import { Ticket } from "../models/ticket";
 
@@ -15,6 +19,10 @@ router.put(
 
     if (!ticket) {
       throw new NotFoundError();
+    }
+
+    if (ticket.userID !== req.currentUser!.id) {
+      throw new NotAuthorizedError();
     }
 
     res.send(ticket);
