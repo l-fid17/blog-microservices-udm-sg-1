@@ -4,6 +4,7 @@ import { json } from "body-parser";
 import cookieSession from "cookie-session";
 
 import { errorHandler, NotFoundError } from "@sg-udemy-gittix/common";
+import { createTicketRouter } from "./routes/new";
 
 const app = express();
 app.set("trust proxy", true);
@@ -15,7 +16,7 @@ app.use(
   })
 );
 
-// app.use(currentUserRouter);
+app.use(createTicketRouter);
 
 app.all("*", async () => {
   throw new NotFoundError();
