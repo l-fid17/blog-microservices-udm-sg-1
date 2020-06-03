@@ -32,3 +32,14 @@ build:
           # synced files
           - src: "**/*.js"
             dest: .
+    - image: lfid/tickets
+      context: tickets
+      docker:
+        dockerfile: Dockerfile
+      # change synced files
+      # inject changes to the pod
+      sync:
+        manual:
+          # synced files
+          - src: "src/**/*.ts"
+            dest: .
