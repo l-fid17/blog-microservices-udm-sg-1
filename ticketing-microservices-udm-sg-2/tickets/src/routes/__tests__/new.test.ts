@@ -12,12 +12,23 @@ it("can only be accessed if signed in", async () => {
 });
 
 it("does not return 401 if the user is signed in", async () => {
-  const response = await request(app).post("/api/tickets").send({});
+  const response = await request(app)
+    .post("/api/tickets")
+    .set("Cookie", global.signin())
+    .send({});
 
   expect(response.status).not.toEqual(401);
 });
 
-it("returns an error if title is invalid", async () => {});
+it("returns an error if title is invalid", async () => {
+  await request(app)
+      .post('/api/tickets')
+      .set('Cookie', global.signin())
+      .send({
+        title: '',
+        price: 10
+      })
+});
 
 it("returns an error if price is invalid", async () => {});
 
