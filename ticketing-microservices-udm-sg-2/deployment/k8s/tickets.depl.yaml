@@ -16,6 +16,8 @@ spec:
         - name: tickets
           image: lfid/tickets
           env:
+            - name: MONGO_URI
+              value: "mongodb://tickets-mongo-srv:27017/tickets"
             # kubectl create secret generic {nameofsecret} --from-literal={NAMEOFSECRET}={VALUEOFSECRET}
             - name: JWT_KEY
               valueFrom:

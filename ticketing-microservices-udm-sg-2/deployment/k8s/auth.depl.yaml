@@ -16,6 +16,8 @@ spec:
         - name: auth
           image: lfid/auth
           env:
+            - name: MONGO_URI
+              value: "mongodb://auth-mongo-srv:27017/auth"
             # kubectl create secret generic {nameofsecret} --from-literal={NAMEOFSECRET}={VALUEOFSECRET}
             - name: JWT_KEY
               valueFrom:
