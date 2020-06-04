@@ -12,7 +12,10 @@ const stan = nats.connect("ticketing", clientID, {
 stan.on("connect", () => {
   console.log("listener connected to nats");
 
-  const subscription = stan.subscribe("ticket:created");
+  const subscription = stan.subscribe(
+    "ticket:created",
+    "order-service-queue-group"
+  );
 
   subscription.on("message", (msg: Message) => {
     const data = msg.getData();
