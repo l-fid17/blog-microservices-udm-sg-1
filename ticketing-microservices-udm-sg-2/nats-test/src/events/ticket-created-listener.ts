@@ -4,7 +4,7 @@ import { TicketCreateEvent } from "./ticket-create-event";
 import { Subjects } from "./subjects";
 
 export class TicketCreatedListener extends Listener<TicketCreateEvent> {
-  subject: Subjects.TicketCreated = Subjects.TicketCreated;
+  readonly subject: Subjects.TicketCreated = Subjects.TicketCreated;
   queueGroupName = "payments-service";
 
   onMessage(data: any, msg: Message) {
