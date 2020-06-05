@@ -1,7 +1,9 @@
-import { Publisher } from "./base-publisher";
-import { TicketCreateEvent } from "./ticket-create-event";
-import { Subjects } from "./subjects";
+import {
+  Publisher,
+  TicketCreatedEvent,
+  Subjects,
+} from "@sg-udemy-gittix/common";
 
-export class TicketCreatedPublisher extends Publisher<TicketCreateEvent> {
+export class TicketCreatedPublisher extends Publisher<TicketCreatedEvent> {
   subject: Subjects.TicketCreated = Subjects.TicketCreated;
 }
