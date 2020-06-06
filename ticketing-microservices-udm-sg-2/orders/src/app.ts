@@ -8,6 +8,10 @@ import {
   NotFoundError,
   currentUser,
 } from "@sg-udemy-gittix/common";
+import { indexOrderRouter } from "./routes";
+import { newOrderRouter } from "./routes/new";
+import { deleteOrderRouter } from "./routes/delete";
+import { showOrderRouter } from "./routes/show";
 
 const app = express();
 app.set("trust proxy", true);
@@ -19,6 +23,11 @@ app.use(
   })
 );
 app.use(currentUser);
+
+app.use(indexOrderRouter);
+app.use(newOrderRouter);
+app.use(deleteOrderRouter);
+app.use(showOrderRouter);
 
 app.all("*", async () => {
   throw new NotFoundError();
