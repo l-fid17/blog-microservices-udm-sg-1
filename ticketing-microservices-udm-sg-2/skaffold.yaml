@@ -43,7 +43,7 @@ build:
           # synced files
           - src: "src/**/*.ts"
             dest: .1
-    - image: lfid/tickets
+    - image: lfid/orders
       context: orders
       docker:
         dockerfile: Dockerfile
