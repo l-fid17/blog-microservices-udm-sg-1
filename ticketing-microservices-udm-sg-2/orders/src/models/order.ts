@@ -2,6 +2,8 @@ import mongoose from "mongoose";
 import { OrderStatus } from "@sg-udemy-gittix/common";
 import { TicketDoc } from "./ticket";
 
+export { OrderStatus };
+
 interface OrderAttrs {
   userID: string;
   status: OrderStatus;
