@@ -10,6 +10,10 @@ import { Ticket } from "../models/ticket";
 
 const router = express.Router();
 
+// could extract this to an env variable for better manipulation
+// could also save it to db to change it via UI or set it per user
+const EXPIRATION_WINDOW_SECONDS = 15 * 60;
+
 router.post(
   "/api/orders",
   requireAuth,
@@ -40,6 +44,8 @@ router.post(
     }
 
     // calculate the expiration for the order
+    const expiration = new Date();
+    expiration.setSeconds(expiration.getSeconds() + EXPIRATION_WINDOW_SECONDS);
 
     // build the order and save it to db
 
