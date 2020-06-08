@@ -1,9 +1,10 @@
 FROM node:lts-alpine
 
 WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED 1
 COPY package.json .
 RUN yarn --prod
-RUN yarn next telemetry disable
+
 COPY . .
 
 CMD ["yarn", "dev"]
