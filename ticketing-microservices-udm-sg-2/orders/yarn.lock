@@ -457,10 +457,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@sg-udemy-gittix/common@^1.0.7":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@sg-udemy-gittix/common/-/common-1.0.7.tgz#2823ee29e91a48af8262f322c5321eb7ac53a9f2"
-  integrity sha512-gsEN2EcM/N2oKVvOvsRg5ouIdjayZWX+lMiljRAtpa+vXSDF8djdJH1qMOx3Yot4IrH4CjjcRuV+dEmsieX2RA==
+"@sg-udemy-gittix/common@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@sg-udemy-gittix/common/-/common-1.0.8.tgz#0fcb4acdc0fddc1973308c4abfda0f5689b953da"
+  integrity sha512-z8AbjjWnkX6xzLSHJqJjmO+BNv/qxTEdMX9UZyI/R73xbpWZtEtoUeoesaYTu/YQDFxN4NijANPOqAYN9xgaUA==
   dependencies:
     "@types/cookie-session" "^2.0.40"
     "@types/express" "^4.17.6"
