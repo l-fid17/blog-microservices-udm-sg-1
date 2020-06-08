@@ -5,9 +5,11 @@ import { Order } from "../models/order";
 const router = express.Router();
 
 router.get("/api/orders", requireAuth, async (req: Request, res: Response) => {
-  // const orders = await Order.find({});
+  const orders = await Order.find({
+    userID: req.currentUser!.id,
+  }).populate("ticket");
 
-  res.send({});
+  res.send(orders);
 });
 
 export { router as indexOrderRouter };
