@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "6ab98e2c-16b7-4bfd-9da2-3417c5fbed47",
+		"name": "micsrvs-udm-sg",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"real1@test.dev\",\n\t\"password\": \"realpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ticketing.dev/api/users/signin",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"users",
+								"signin"
+							]
+						},
+						"description": "https://ticketing.dev/api/users/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "GetCurrentUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ticketing.dev/api/users/currentuser",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"users",
+								"currentuser"
+							]
+						},
+						"description": "https://ticketing.dev/api/users/currentuser"
+					},
+					"response": []
+				},
+				{
+					"name": "SignOut",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://ticketing.dev/api/users/signout",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"users",
+								"signout"
+							]
+						},
+						"description": "https://ticketing.dev/api/users/signout"
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"real1@test.dev\",\n\t\"password\": \"realpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ticketing.dev/api/users/signup",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Tickets",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"title\",\n\t\"price\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ticketing.dev/api/tickets",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"tickets"
+							]
+						},
+						"description": "https://ticketing.dev/api/tickets"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"newtitle\",\n\t\"price\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ticketing.dev/api/tickets/5ed7c1ef90aa7101f3e46d19",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"tickets",
+								"5ed7c1ef90aa7101f3e46d19"
+							]
+						},
+						"description": "https://ticketing.dev/api/tickets"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ticketing.dev/api/tickets",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"tickets"
+							]
+						},
+						"description": "https://ticketing.dev/api/tickets"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://ticketing.dev/api/tickets/5ed7c1ef90aa7101f3e46d19",
+							"protocol": "https",
+							"host": [
+								"ticketing",
+								"dev"
+							],
+							"path": [
+								"api",
+								"tickets",
+								"5ed7c1ef90aa7101f3e46d19"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
