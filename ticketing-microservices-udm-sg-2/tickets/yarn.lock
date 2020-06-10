@@ -458,9 +458,9 @@
     chalk "^4.0.0"
 
 "@sg-udemy-gittix/common@^1.0.6":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@sg-udemy-gittix/common/-/common-1.0.11.tgz#88600b45a710539c084058d9f0cf899f66347d3f"
-  integrity sha512-kbE7CC5UZpphX/a0Z9tQMy1CGXZWc8AJxlPXPgDDfrryAtiw22g4sNUfhgnZF4o2hlaGltGd98hx3Fb2Pi0pfw==
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@sg-udemy-gittix/common/-/common-1.0.12.tgz#42cdaebf0fa9a846d4aedbf028abdc3ca97c57e3"
+  integrity sha512-dv3mQulaNJF/zoLtOGkNlaVwZSjtPyjzLdXF+Zvsszmo86RJmASf46yGOqEzwwfGlKPFSufX2LPyJJ67bNPDnw==
   dependencies:
     "@types/cookie-session" "^2.0.39"
     "@types/express" "^4.17.5"
