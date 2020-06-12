@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import { body } from "express-validator";
 
 import {
+  BadRequestError,
   NotAuthorizedError,
   NotFoundError,
   requireAuth,
@@ -35,6 +36,10 @@ router.put(
       throw new NotAuthorizedError();
     }
 
+    if (ticket.orderID) {
+      throw new BadRequestError("This ticket is currently reserved");
+    }
+
     ticket.set({
       title: req.body.title,
       price: req.body.price,
@@ -45,7 +50,7 @@ router.put(
       title: ticket.title,
       price: ticket.price,
       userID: ticket.userID,
-      version: ticket.version
+      version: ticket.version,
     });
 
     res.send(ticket);
