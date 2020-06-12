@@ -1,10 +1,12 @@
 import request from "supertest";
 import { app } from "../../app";
 import { Ticket } from "../../models/ticket";
+import mongoose from "mongoose";
 
 it("fetches the order", async () => {
   // create a ticket
   const ticket = await Ticket.build({
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "title",
     price: 20,
   });
@@ -32,6 +34,7 @@ it("fetches the order", async () => {
 it("returns unauthorized if user is trying to fetch someone else's order", async () => {
   // create a ticket
   const ticket = await Ticket.build({
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: "title",
     price: 20,
   });
