@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: lfid/auth
+    - image: devf1d/auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -20,8 +20,7 @@ build:
           - src: "src/**/*.ts"
             dest: .
       # change unsynced files
-      # using GC Build
-    - image: lfid/client
+    - image: devf1d/client
       context: client
       docker:
         dockerfile: Dockerfile
@@ -32,7 +31,7 @@ build:
           # synced files
           - src: "**/*.js"
             dest: .
-    - image: lfid/tickets
+    - image: devf1d/tickets
       context: tickets
       docker:
         dockerfile: Dockerfile
@@ -43,8 +42,19 @@ build:
           # synced files
           - src: "src/**/*.ts"
             dest: .1
-    - image: lfid/orders
+    - image: devf1d/orders
       context: orders
+      docker:
+        dockerfile: Dockerfile
+      # change synced files
+      # inject changes to the pod
+      sync:
+        manual:
+          # synced files
+          - src: "src/**/*.ts"
+            dest: .
+    - image: devf1d/expiration
+      context: expiration
       docker:
         dockerfile: Dockerfile
       # change synced files
