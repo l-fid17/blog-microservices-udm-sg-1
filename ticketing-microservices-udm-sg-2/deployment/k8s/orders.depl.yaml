@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: lfid/orders
+          image: devf1d/orders
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

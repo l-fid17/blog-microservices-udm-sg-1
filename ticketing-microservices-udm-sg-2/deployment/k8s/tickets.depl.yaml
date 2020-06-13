@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tickets
-          image: lfid/tickets
+          image: devf1d/tickets
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

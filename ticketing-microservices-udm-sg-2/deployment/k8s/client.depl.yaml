@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: lfid/client
+          image: devf1d/client
 ---
 apiVersion: v1
 kind: Service
